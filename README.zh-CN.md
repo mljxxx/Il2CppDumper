@@ -14,6 +14,19 @@ Unity il2cpp逆向工程
 * 支持从内存dump的`libil2cpp.so`文件以绕过保护
 * 支持绕过简单的PE保护
 
+## 构建
+需要安装 [.NET 7.0 SDK](https://dotnet.microsoft.com/zh-cn/download/dotnet/7.0)
+```
+win64:
+dotnet publish -r win-x64 -p:PublishSingleFile=true -f net7.0 --self-contained
+
+linux64:
+dotnet publish -r linux-x64 -p:PublishSingleFile=true -f net7.0 --self-contained
+
+macos-apple-silicon:
+dotnet publish -r osx-arm64 -p:PublishSingleFile=true -f net7.0 --self-contained
+```
+
 ## 使用说明
 
 直接运行Il2CppDumper.exe并依次选择il2cpp的可执行文件和global-metadata.dat文件，然后根据提示输入相应信息。
