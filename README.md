@@ -16,6 +16,19 @@ Unity il2cpp reverse engineer
 * Supports Android memory dumped `libil2cpp.so` file to bypass protection
 * Support bypassing simple PE protection
 
+## Build
+Need install [.NET 7.0 SDK](https://dotnet.microsoft.com/zh-cn/download/dotnet/7.0)
+```
+win64:
+dotnet publish -r win-x64 -p:PublishSingleFile=true -f net7.0 --self-contained
+
+linux64:
+dotnet publish -r linux-x64 -p:PublishSingleFile=true -f net7.0 --self-contained
+
+macos-apple-silicon:
+dotnet publish -r osx-arm64 -p:PublishSingleFile=true -f net7.0 --self-contained
+```
+
 ## Usage
 
 Run `Il2CppDumper.exe` and choose the il2cpp executable file and `global-metadata.dat` file, then enter the information as prompted
